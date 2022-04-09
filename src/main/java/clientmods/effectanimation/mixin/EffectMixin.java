@@ -21,12 +21,18 @@ public class EffectMixin {
     // This code looks so awkward because getEffectID is broken, so I xor the results to check if anything is added
     @Inject(at = @At("HEAD"), method = "onEntityStatusEffect")
     private void check_effects(EntityStatusEffectS2CPacket packet, CallbackInfo ci) {
+        if (client.player == null) {
+            return;
+        }
         omen = client.player.hasStatusEffect(StatusEffects.BAD_OMEN);
         hero = client.player.hasStatusEffect(StatusEffects.HERO_OF_THE_VILLAGE);
     }
 
     @Inject(at = @At("TAIL"), method = "onEntityStatusEffect")
     private void animate(EntityStatusEffectS2CPacket packet, CallbackInfo ci) {
+        if (client.player == null) {
+            return;
+        }
         Entity entity = ((ClientPlayNetworkHandler)(Object)this).getWorld().getEntityById(packet.getEntityId());
         int duration = packet.getDuration();
         if (entity != client.player && duration > 0) {
