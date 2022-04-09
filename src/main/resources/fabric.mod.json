@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "id": "effectanimation",
+  "version": "${version}",
+  "name": "Effectanimation",
+  "description": "Adds the Bedrock animation of the Bad Omen and Hero of the Village effects",
+  "authors": [
+    "Anonymous1212144"
+  ],
+  "contact": {
+    "homepage": "https://www.youtube.com/channel/UCStYbXooQ0OjbKz9d3hWKFA",
+    "issues": "https://github.com/Anonymous1212144/effectanimation/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/effectanimation/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "clientmods.effectanimation.Effectanimation"
+    ]
+  },
+  "mixins": [
+    "effectanimation.mixins.json"
+  ]
+}
