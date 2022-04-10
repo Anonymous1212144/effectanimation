@@ -21,5 +21,8 @@
   },
   "mixins": [
     "effectanimation.mixins.json"
-  ]
+  ],
+  "depends": {
+    "fabric": "*"
+  }
 }
